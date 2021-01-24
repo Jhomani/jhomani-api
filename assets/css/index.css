@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+*::after, *::before, * {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0 0 10px 0;
+  font-family:'Rubik', sans-serif;;
+}
+
+hr {
+  border-bottom: 0;
+  border-color: #8282824a;
+  margin: 0;
+}
+
+.welcome-title {
+  background-color: #192b38 ;
+}
+
+.welcome-title h2 {
+  text-align: center;
+  color: #fca130;
+  padding: 20px 0;
+}
+
+.body-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.searcher {
+  padding: 0 20px;
+  margin: 20px 0;
+}
+.searcher input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #192b38;
+  border-radius: 12px;
+  padding: 0 10px;
+}
+::placeholder {
+  font-style: italic;
+  color: #192b38;
+}
+
+.end-point-box {
+  padding: 10px;
+}
+.end-point-box h3 {
+  color: #021e2e;
+  text-transform: capitalize;
+}
+
+.end-point-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.end-point-box ul li {
+  padding: 10px 5px;
+  cursor: pointer;
+  transition: all .3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.end-point-box ul li .method {
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+  height: 22px;
+  margin-right: 8px;
+}
+
+.end-point-box ul li .end_point {
+  color: #021e2e;
+}
+
+.end-point-box .get-method .method {
+  background-color: #61affe;
+}
+.end-point-box .get-method {
+  background-color: rgba(97, 175, 254, .1);
+}
+.end-point-box li.get-method:hover {
+  border-bottom: 1px solid #61affe;
+}
+
+.end-point-box .delete-method .method {
+  background-color: #f93e3e;
+}
+.end-point-box .delete-method {
+  background-color: rgba(249, 62, 62, .1);
+}
+.end-point-box .delete-method:hover {
+  border-bottom: 1px solid #f93e3e;
+}
+
+.end-point-box .patch-method .method {
+  background-color: #fca130;
+}
+.end-point-box .patch-method {
+  background-color: rgba(252,161, 48, .1);
+}
+.end-point-box .patch-method:hover {
+  border-bottom: 1px solid #fca130;
+}
+
+.end-point-box .post-method .method {
+  background-color: #49cc90;
+}
+.end-point-box .post-method {
+  background-color: rgba(73, 204, 144, .1);
+}
+.end-point-box .post-method:hover {
+  border-bottom: 1px solid #49cc90;
+}
+
+
+.detail-endpoint {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .25s ease-out;
+}
+
+.collapse {
+  max-height: 500px;
+  transition: max-height .15s ease-in;
+}
+
+.detail-endpoint > div {
+  padding: 10px 15px;
+}
+.detail-endpoint > div .title {
+  color: #021e2e;
+}
+.detail-endpoint > div .description {
+  margin-top: 10px;
+}
+
+.detail-endpoint > div .description .data span {
+  font-size: 13px;
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: #192b38;
+  border-radius: 8px;
+  margin-right: 2px;
+  color: #fff;
+}
+.detail-endpoint > div .description .data textarea {
+  background-color: #111;
+  border: 0;
+  resize: none;
+  outline: none;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+.detail-endpoint > div .description .subtitle span {
+  color: #192b38;
+  font-weight: 400;
+}
