@@ -1,6 +1,6 @@
 const requests = require('../database/requets');
-const products = new requests('products');
-const { postSchema, patchSchema } = require('../model/product');
+const { postSchema, patchSchema, schema } = require('../model/product');
+const products = new requests('products', schema);
 
 const singleGet = async (req, res) => {
   try {

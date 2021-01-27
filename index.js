@@ -1,7 +1,9 @@
 const functions = require("firebase-functions");
 const path = require('path');
 const express = require("express");
+require("dotenv").config();
 const app = express();
+
 // const products = require('./controller/index');
 
 path.join(__dirname, '../db.json');

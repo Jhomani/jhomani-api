@@ -1,9 +1,7 @@
 const db = require('./connect');
-const { schema } = require('../model/product');
-const { report } = require('../router/produts');
 
 class requests {
-  constructor(collection) {
+  constructor(collection, schema) {
     this.nameCollection = collection;
     this.collection = db.collection(collection);
     this.skip = 0;
@@ -12,6 +10,7 @@ class requests {
     this.orderBy = '';
     this.include = [];
     this.where = {};
+    this.schema = schema;
   }
 
   resetValues() {
@@ -43,7 +42,7 @@ class requests {
     if (selected.length !== 0)
       this.collection = this.collection.select(...selected);
     else {
-      for (let field in schema) {
+      for (let field in this.schema) {
         let add = true;
 
         unSelected.forEach(elem => {

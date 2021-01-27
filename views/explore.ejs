@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="/public/css/index.css">
+  <link rel="stylesheet" href="/app/public/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/app/public/css/index.css">
+  <link rel="icon" type="image/x-icon" href="https://joi.dev/favicon2.png">
   <title>Jhomani API</title>
 </head>
 
@@ -19,11 +20,11 @@
     </div>
 
     <div class="end-point-box">
-      <h3>title</h3>
+      <h3>Products Cotroller</h3>
       <ul>
         <li class="get-method">
           <span class="method">get</span>
-          <span class="end_point">/access/count</span>
+          <span class="end_point">/products</span>
         </li>
         <div class="get-method detail-endpoint">
           <div>
@@ -50,9 +51,228 @@
               <div class="col-11 data">
                 <span>object</span>
                 <span>query</span>
-                <textarea readonly rows="6">
+                <textarea readonly rows="10">
 {
-  data: "juan carlos"
+  skip: "number",
+  limit: "number",
+  where: {
+    field: "value"
+  },
+  fields: {
+    name: true,
+    price: true,
+    description: true,
+  },
+  include: [
+    "in development"
+  ]
+}
+                </textarea>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Response</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>cd-200</span>
+              </div>
+              <div class="col-11 data">
+                <span>Array</span>
+                <textarea readonly rows="7">
+[
+  {
+    id: "string",
+    name: "string",
+    description: "string",
+    number: "number",
+  }
+]
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <li class="get-method">
+          <span class="method">Get</span>
+          <span class="end_point">/products/count</span>
+        </li>
+        <div class="get-method detail-endpoint">
+          <div>
+            <div class="row">
+              <div class="col-12 title">
+                <h4>Parameters</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>filter</span>
+              </div>
+              <div class="col-11 data">
+                <span>object</span>
+                <span>query</span>
+                <textarea readonly rows="10">
+{
+  where: {
+    field: 'value'
+  },
+  include: [
+    'in development'
+  ]
+}
+                </textarea>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Response</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>cd-200</span>
+              </div>
+              <div class="col-11 data">
+                <span>Obj</span>
+                <textarea readonly rows="7">
+{
+  count: "number"
+}
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <li class="post-method">
+          <span class="method">post</span>
+          <span class="end_point">/products/{id}</span>
+        </li>
+        <div class="post-method detail-endpoint">
+          <div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Request Body</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>body</span>
+              </div>
+              <div class="col-11 data">
+                <span>Obj</span>
+                <textarea readonly rows="7">
+{
+  name: "string",
+  description: "string",
+  number: "number",
+}
+                </textarea>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Parameters</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>id</span>
+              </div>
+              <div class="col-11 data">
+                <span>require</span>
+                <span>string</span>
+                <span>path</span>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Response</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>cd-200</span>
+              </div>
+              <div class="col-11 data">
+                <span>Obj</span>
+                <textarea readonly rows="7">
+{
+  id: "string",
+  name: "string",
+  description: "string",
+  number: "number",
+}
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <li class="patch-method">
+          <span class="method">patch</span>
+          <span class="end_point">/products/{id}</span>
+        </li>
+        <div class="patch-method detail-endpoint">
+          <div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Request Body</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>body</span>
+              </div>
+              <div class="col-11 data">
+                <span>Obj</span>
+                <textarea readonly rows="7">
+{
+  name: "string",
+  description: "string",
+  number: "number",
+}
+                </textarea>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Parameters</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>id</span>
+              </div>
+              <div class="col-11 data">
+                <span>require</span>
+                <span>string</span>
+                <span>path</span>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Response</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>cd-200</span>
+              </div>
+              <div class="col-11 data">
+                <span>Obj</span>
+                <textarea readonly rows="4">
+{
+  msg: "success update"
 }
                 </textarea>
               </div>
@@ -60,20 +280,108 @@
           </div>
         </div>
         <li class="delete-method">
-          <span class="method">Delete</span>
-          <span class="end_point">/access/count</span>
+          <span class="method">delete</span>
+          <span class="end_point">/products/{id}</span>
+        </li>
+        <div class="delete-method detail-endpoint">
+          <div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Parameters</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>id</span>
+              </div>
+              <div class="col-11 data">
+                <span>require</span>
+                <span>string</span>
+                <span>path</span>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 1em;">
+              <div class="col-12 title">
+                <h4>Response</h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row description">
+              <div class="col-1 subtitle">
+                <span>cd-200</span>
+              </div>
+              <div class="col-11 data">
+                <span>Obj</span>
+                <textarea readonly rows="4">
+{
+  msg: "success delete"
+}
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+      <h3 style="margin-top: 1em;">Categories Cotroller <span style="font-size: 13px">(demo)</span></h3>
+      <ul>
+        <li class="get-method">
+          <span class="method">get</span>
+          <span class="end_point">/categories</span>
+        </li>
+        <li class="get-method">
+          <span class="method">get</span>
+          <span class="end_point">/categories/count</span>
+        </li>
+        <li class="get-method">
+          <span class="method">get</span>
+          <span class="end_point">/categories/{id}</span>
         </li>
         <li class="post-method">
           <span class="method">post</span>
-          <span class="end_point">/access/count</span>
+          <span class="end_point">/categories/{id}</span>
         </li>
         <li class="patch-method">
           <span class="method">patch</span>
-          <span class="end_point">/access/count</span>
+          <span class="end_point">/categories/{id}</span>
+        </li>
+        <li class="delete-method">
+          <span class="method">delete</span>
+          <span class="end_point">/categories/{id}</span>
+        </li>
+      </ul>
+      <h3 style="margin-top: 1em;">Users Cotroller <span style="font-size: 13px">(demo)</span></h3>
+      <ul>
+        <li class="get-method">
+          <span class="method">get</span>
+          <span class="end_point">/users</span>
+        </li>
+        <li class="get-method">
+          <span class="method">get</span>
+          <span class="end_point">/users/me</span>
+        </li>
+        <li class="get-method">
+          <span class="method">get</span>
+          <span class="end_point">/users/count</span>
+        </li>
+        <li class="get-method">
+          <span class="method">get</span>
+          <span class="end_point">/users/{id}</span>
+        </li>
+        <li class="post-method">
+          <span class="method">post</span>
+          <span class="end_point">/users/{id}</span>
+        </li>
+        <li class="patch-method">
+          <span class="method">patch</span>
+          <span class="end_point">/users/{id}</span>
+        </li>
+        <li class="delete-method">
+          <span class="method">delete</span>
+          <span class="end_point">/users/{id}</span>
         </li>
       </ul>
     </div>
-
   </div>
 </body>
 <script>
@@ -83,15 +391,15 @@
     el.onclick = () => {
       let collapse = el.nextElementSibling;
 
-      if (collapse.className.match('collapse'))
-        collapse.classList.remove('collapse');
-      else
-        collapse.classList.add('collapse');
+      if (collapse) {
+        if (collapse.className.match('collapse'))
+          collapse.classList.remove('collapse');
+        else
+          collapse.classList.add('collapse');
+      }
 
     }
   }
-
-  console.log(target)
 </script>
 
 </html>
